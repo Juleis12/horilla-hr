@@ -135,6 +135,7 @@
                 </a>
             </li>
             {% for menues in sidebar %}
+                {% if menues.app|lower == 'recruitment' or menues.menu|lower == 'recruitment' %}
                 <li class="oh-sidebar__menu-item" x-data="{ isOpen: getOpenState('{{menues.app}}GenericNav') }">
                     <a
                         class="oh-sidebar__menu-link"
@@ -174,6 +175,7 @@
                         </ul>
                     </div>
                 </li>
+                {% endif %}
             {% endfor %}
         </ul>
     </div>
