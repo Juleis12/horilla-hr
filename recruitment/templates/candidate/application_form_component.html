@@ -14,6 +14,8 @@
     <meta property="og:description" content="{% if recruitment.title %}{% trans 'Submit your application for' %} {{ recruitment.title }}. Apply online. {% else %}{% trans 'Complete the online job application form.' %}{% endif %}">
     {% if seo_canonical_url %}<meta property="og:url" content="{{ seo_canonical_url }}">{% endif %}
     <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% if recruitment.title %}{% trans 'Apply for' %} {{ recruitment.title }} | {% endif %}{{ white_label_company_name|default:'Careers' }}">
+    <meta name="twitter:description" content="{% if recruitment.title %}{% trans 'Apply online for' %} {{ recruitment.title }}. {% else %}{% trans 'Complete the online job application form.' %}{% endif %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
