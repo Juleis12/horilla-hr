@@ -133,7 +133,11 @@ def metrics(request):
     return HttpResponse(scheduler_metrics(), content_type="text/plain; version=0.0.4")
 
 
+from recruitment.seo import robots_txt, sitemap_xml
+
 urlpatterns = [
+    path("robots.txt", robots_txt, name="robots-txt"),
+    path("sitemap.xml", sitemap_xml, name="sitemap"),
     path("admin/", admin.site.urls),
     # django.contrib.auth.urls is here for the password_reset_* routes its forms
     # and mails reverse. Its /accounts/login/ renders registration/login.html,
