@@ -656,10 +656,17 @@ def application_form(request):
         initial_data = {"resume": resume_obj.file.url} if resume_obj else {}
         form = ApplicationForm(initial=initial_data)
 
+    application_path = reverse("application-form")
+    canonical_path = f"{application_path}?recruitmentId={recruitment.pk}"
     return render(
         request,
         "candidate/application_form.html",
-        {"form": form, "recruitment": recruitment, "resume": resume_obj},
+        {
+            "form": form,
+            "recruitment": recruitment,
+            "resume": resume_obj,
+            "seo_canonical_url": request.build_absolute_uri(canonical_path),
+        },
     )
 
 
