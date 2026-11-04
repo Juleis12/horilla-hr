@@ -7,7 +7,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ white_label_company_name }}{% trans " - Open Recruitments" %}</title>
+        <title>{% trans "Open Jobs & Career Opportunities" %} | {{ white_label_company_name|default:"Careers" }}</title>
+        <meta name="description" content="{% trans 'Explore current job openings and career opportunities. Find a role that matches your skills and apply online.' %}">
+        <meta name="robots" content="index, follow, max-image-preview:large">
+        <link rel="canonical" href="{{ request.build_absolute_uri }}">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{% trans 'Open Jobs & Career Opportunities' %} | {{ white_label_company_name|default:'Careers' }}">
+        <meta property="og:description" content="{% trans 'Explore current job openings and career opportunities. Find a role that matches your skills and apply online.' %}">
+        <meta property="og:url" content="{{ request.build_absolute_uri }}">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{% trans 'Open Jobs & Career Opportunities' %} | {{ white_label_company_name|default:'Careers' }}">
+        <meta name="twitter:description" content="{% trans 'Explore current job openings and career opportunities. Find a role that matches your skills and apply online.' %}">
         <link
             rel="apple-touch-icon"
             sizes="180x180"
